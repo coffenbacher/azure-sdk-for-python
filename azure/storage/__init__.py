@@ -567,6 +567,7 @@ def _update_storage_table_header(request, content_type='application/atom+xml'):
     current_time = format_date_time(time())
     request.headers.append(('x-ms-date', current_time))
     request.headers.append(('Date', current_time))
+    request.headers.append(('Prefer', 'return-no-content'))
     return request.headers
 
 
